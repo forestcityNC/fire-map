@@ -223,39 +223,45 @@
     // add layers to Panellayers control //
     var overLayers = [
           {
-            name: "Group Homes",
-            active: true,
-            layer: groupHomes
-          },
-          {
             name: "911 Addresses",
             active: false,
             layer: addresses
           },
           {
-            name: "Group Home 1/2 Mile Radius",
-            active: false,
-            layer: ghBuffer
-          },
-          {
-            name: "Floodplain",
-            active: false,
-            layer: floodPlain
-          },
-          {
-            name: "Fire District",
-            active: false,
-            layer: fd
-          },
-          {
-            name: "ETJ",
-            active: false,
-            layer: etj
-          },
-          {
-            name: "Fire Hydrants",
-            active: false,
-            layer: hydrant
+            group: "More Features",
+            collapsed: true,
+            layers: [
+              {
+                name: "Group Homes",
+                active: false,
+                layer: groupHomes
+              },
+              {
+                name: "Group Home 1/2 Mile Radius",
+                active: false,
+                layer: ghBuffer
+              },
+              {
+                name: "Floodplain",
+                active: false,
+                layer: floodPlain
+              },
+              {
+                name: "Fire District",
+                active: false,
+                layer: fd
+              },
+              {
+                name: "ETJ",
+                active: false,
+                layer: etj
+              },
+              {
+                name: "Fire Hydrants",
+                active: false,
+                layer: hydrant
+              }
+            ]
           }
     ];
 
