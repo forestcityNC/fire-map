@@ -118,6 +118,15 @@
       fillOpacity: 0.7
     };
 
+    var fhStyle = {
+      radius: 3,
+      fillColor: "red",
+      color: "#black",
+      weight: 2,
+      opacity: 1,
+      fillOpacity: 0.7
+    };
+
     var ghIcon = L.icon({
       iconUrl:'images/groupHome.png',
       iconSize: [45,50],
@@ -165,13 +174,19 @@
       )},
     });
 
+    var hydrant = new L.GeoJSON.AJAX("data/hydrant.geojson", {
+      pointToLayer: function (feature, latlng) {
+       return L.circleMarker(latlng, fhStyle);
+     },
+    });
+
     var groupHomes = new L.GeoJSON.AJAX("data/groupHomes.geojson", {
       pointToLayer: function (feature, latlng) {
        return L.marker(latlng, {icon:ghIcon});
      },
       onEachFeature: function (feature, layer) {
         layer.bindPopup(
-          '<h3>' + feature.properties.full_addre + '</h3>' + '<br>' + 'Group Home'
+          '<h4>' + feature.properties.full_addre + '</h4>' + '<br>' + 'Group Home'
       )},
     });
 
@@ -236,6 +251,11 @@
             name: "ETJ",
             active: false,
             layer: etj
+          },
+          {
+            name: "Fire Hydrants",
+            active: false,
+            layer: hydrant
           }
     ];
 
