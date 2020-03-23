@@ -97,8 +97,6 @@
         	}
         ];
 
-
-
     // layer stylings //
     var ghStyle = {
       fillColor: "orange",
@@ -128,8 +126,8 @@
 
     var ghIcon = L.icon({
       iconUrl:'images/groupHome.png',
-      iconSize: [45,50],
-      iconAnchor: [0,0],
+      iconSize: [30,40],
+      iconAnchor: [-0,-0],
       popupAnchor: [0, 0]
     });
 
@@ -198,7 +196,7 @@
 
     map.createPane('floodPane');
     map.getPane('floodPane').style.zIndex = 250;
-    var floodPlain = new L.GeoJSON.AJAX("data/floodPlains.geojson", {
+    var floodPlain = new L.GeoJSON.AJAX("data/floodplains.geojson", {
       pane: 'floodPane',
       style: floodStyle
     });
